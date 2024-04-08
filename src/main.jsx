@@ -12,6 +12,7 @@ import UpdateProfile from './components/Home/UpdateProfile';
 import UserProfile from './components/Home/UserProfile';
 import LogIn from './components/Authentication/LogIn';
 import Registration from './components/Authentication/Registration';
+import Deatails from './components/Deatails';
 
 
 
@@ -24,6 +25,12 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
+        loader : ()=>fetch('/fakeData.json')
+      },
+      {
+        path: '/details/:id',
+        element: <Deatails></Deatails>,
+        loader : ()=>fetch('/fakeData.json')
       },
       {
         path: '/about',

@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 
 const Nav = () => {
   return (
-    <div className="navbar leg bg-orange-200 h-[100px] font-[700] rounded-3xl w-[90%] m-auto">
+    <div className="navbar absolute z-10 leg opacity-100 mt-5  lg:h-[100px] font-[700] rounded-3xl md:w-[100%] lg:w-[90%] lg:left-20">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -26,25 +26,22 @@ const Nav = () => {
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <a>Item 1</a>
+              <NavLink to={"/"}>Home</NavLink>
             </li>
             <li>
-              <a>Parent</a>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
+              <NavLink to={"/about"}>About Us</NavLink>
             </li>
             <li>
-              <a>Item 3</a>
+              <NavLink to={"/updateProfile"}>Update Profile</NavLink>
+            </li>
+            <li>
+              <NavLink to={"/userProfile"}>User Profile</NavLink>
             </li>
           </ul>
         </div>
-        <Link to={"/"}><a className="btn btn-ghost text-3xl">DIM-HOME</a></Link>
+        <Link to={"/"}>
+          <a className="btn btn-ghost lg:text-3xl">DREAM-TULIP</a>
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -63,20 +60,30 @@ const Nav = () => {
         </ul>
       </div>
       <div className="navbar-end">
-      <Link to={"/login"}><button className="btn btn-outline btn-small">Log In</button></Link>
+        <Link to={"/login"}>
+          <button className="btn btn-outline ">Log In</button>
+        </Link>
       </div>
       <div className="ml-3">
-      <Link to={"/register"}><button className="btn btn-outline ">Sign Up</button></Link>
+        <Link to={"/register"}>
+          <button className="btn btn-outline ">Sign Up</button>
+        </Link>
       </div>
       <div className="dropdown dropdown-end ml-3">
-      <div tabIndex={0} role="button" className=" avatar tooltip tooltip-bottom" data-tip="hello" >
-        
-        <div className="w-10 rounded-full " >
-          <img alt="Tailwind CSS Navbar component tool-tip" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+        <div
+          tabIndex={0}
+          role="button"
+          className=" avatar tooltip tooltip-bottom"
+          data-tip="hello"
+        >
+          <div className="w-10 rounded-full lg:mr-3">
+            <img
+              alt="Tailwind CSS Navbar component tool-tip"
+              src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+            />
+          </div>
         </div>
       </div>
-     
-    </div>
     </div>
   );
 };

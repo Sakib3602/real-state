@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "image": "https://i.ibb.co/1fsbk2d/card6.jpg",
+    "estate_title": "Sky-High Luxury Penthouse",
+    "segment_name": "Luxury",
+    "description": "Exquisite penthouse in NYC with panoramic city views, private elevator access, spacious living areas, modern kitchen, rooftop terrace, and swimming pool.",
+    "price": "$4,500,000",
+    "status": "sale",
+    "area": "4500 sq ft",
+    "location": "New York City, NY",
+    "facilities": ["living room", "swimming pool", "modern kitchen", "rooftop terrace"],
+    "view_button": "View Property"
+  },
+  {
+    "id": 2,
+    "image": "https://i.ibb.co/7bJhc01/card1.jpg",
+    "estate_title": "Beachfront Villa",
+    "segment_name": "Luxury",
+    "description": "Secluded villa in Malibu with beach access, ocean views, infinity pool, gourmet kitchen, and lush gardens.",
+    "price": "$3,800,000",
+    "status": "sale",
+    "area": "5200 sq ft",
+    "location": "Malibu, California",
+    "facilities": ["living room", "infinity pool", "gourmet kitchen", "private beach access"],
+    "view_button": "View Property"
+  },
+  {
+    "id": 3,
+    "image": "https://i.ibb.co/3vXVpgk/card2.jpg",
+    "estate_title": "Secluded Luxury Resort",
+    "segment_name": "Luxury",
+    "description": "Luxury resort in Fiji Islands offering privacy, multiple living areas, private pools, professional kitchen, and spa.",
+    "price": "Price upon request",
+    "status": "rent",
+    "area": "Entire Resort",
+    "location": "Fiji Islands",
+    "facilities": ["multiple living areas", "private pools", "professional kitchen", "spa and wellness center"],
+    "view_button": "View Property"
+  },
+  {
+    "id": 4,
+    "image": "https://i.ibb.co/ZHxFpgS/bailey-anselme-Bkp3g-Lygye-A-unsplash.jpg",
+    "estate_title": "Exclusive Private Island",
+    "segment_name": "Luxury",
+    "description": "Private island in The Bahamas with luxury villas, private beaches, personal chef, and yacht docking. .",
+    "price": "Price upon request",
+    "status": "sale",
+    "area": "20 acres",
+    "location": "The Bahamas",
+    "facilities": ["luxury villas", "private beaches", "personal chef", "yacht docking"],
+    "view_button": "View Property"
+  },
+  {
+    "id": 5,
+    "image": "https://i.ibb.co/XZZsqWJ/card4.jpg",
+    "estate_title": "Modern Architectural Mansion",
+    "segment_name": "Luxury",
+    "description": "Modern mansion in Beverly Hills with grand living room, outdoor pool, chef's kitchen, home theater, and wine cella.",
+    "price": "$7,900,000",
+    "status": "sale",
+    "area": "8500 sq ft",
+    "location": "Beverly Hills, California",
+    "facilities": ["grand living room", "outdoor pool", "chef's kitchen", "home theater", "wine cellar"],
+    "view_button": "View Property"
+  },
+  {
+    "id": 6,
+    "image": "https://i.ibb.co/phFxH9M/card5.jpg",
+    "estate_title": "Oceanfront Mansion",
+    "segment_name": "Luxury",
+    "description": "Luxurious oceanfront mansion in Malibu with spacious living areas, infinity-edge pool, private beach access, home gym, and sauna.",
+    "price": "$12,500,000",
+    "status": "sale",
+    "area": "10000 sq ft",
+    "location": "Malibu, California",
+    "facilities": ["spacious living areas", "infinity-edge pool", "private beach access", "home gym", "sauna"],
+    "view_button": "View Property"
+  }
+]
