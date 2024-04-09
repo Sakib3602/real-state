@@ -15,14 +15,14 @@ const UpdateProfile = () => {
   const onSubmit = (data) => {
     const {name,number,photo} = data
 
-    update(name,photo,number)
+    update(name,photo)
     .then(() => {
         toast("Updated Your Profile!");
       }).catch((error) => {
         toast("SomeThing Is Wrong!");
       });
     
-    console.log(name,photo,number)
+    console.log(name,photo)
   };
   return (
     <div className="min-h-[500px] w-[100%] m-auto rounded-lg p-3 border">
@@ -36,10 +36,7 @@ const UpdateProfile = () => {
             Name
             <input type="text" {...register("name")} className="  lg:w-[590px]" placeholder="Your Name" />
           </label>
-          <label className="input input-bordered flex items-center gap-2">
-            Phone
-            <input type="text" {...register("number")} className=" lg:w-[590px]" placeholder="Phone Number" />
-          </label>
+         
           <label className="input input-bordered flex items-center gap-2">
             Photo URL
             <input type="text" {...register("photo")} className=" lg:w-[590px]" placeholder="Give Only Url" />

@@ -5,7 +5,9 @@ import { AuthContext } from "./AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate ,  useLocation } from "react-router-dom";
+import { FaEye } from "react-icons/fa";
 const LogIn = () => {
+    const [see,setSee] = useState(true)
   const [error, setError] = useState(null);
   const { signInEmailPassword, google , github, person} = useContext(AuthContext);
   const {
@@ -40,6 +42,10 @@ const LogIn = () => {
       
     
   };
+  function SEE(){
+    setSee(!see)
+    console.log(see)
+  }
 
   return (
     <div className="hero min-h-screen bg-base-200 pt-20 md:p-28 lg:p-28">
@@ -88,16 +94,16 @@ const LogIn = () => {
               )}
             </div>
 
+            {/*  */}
+            {/*  */}
+
             <div className="form-control">
-              <label className="label">
-                <span className="label-text">Password</span>
-              </label>
-              <input
-                type="password"
-                {...register("password", { required: true })}
-                placeholder="password"
-                className="input input-bordered"
-              />
+            <h1>Password</h1>
+            <label className="input input-bordered flex items-center gap-2 ">
+            <input type={see ? "password" : "text"} {...register("password", { required: true })} className="  lg:w-[590px]" placeholder="password" />
+            <FaEye onClick={SEE} className="text-[50px]"></FaEye>
+          </label>
+              
               {errors.password && (
                 <span className="text-red-600">This field is required</span>
               )}

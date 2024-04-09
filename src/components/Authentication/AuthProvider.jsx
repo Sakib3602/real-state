@@ -39,9 +39,9 @@ function logout(){
   
 }
 // update profile
-function update(name,photo,number){
+function update(name,photo){
     return updateProfile(auth.currentUser, {
-        displayName: name, photoURL: photo, phoneNumber : number, 
+        displayName: name, photoURL: photo,  
       })
 }
 

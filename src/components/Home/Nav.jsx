@@ -103,7 +103,7 @@ const Nav = () => {
 
 
              
-              src={`${person.photoURL || "https://i.ibb.co/hCnXYpD/blank-profile-picture-973460-1280.png" }`}
+              src={person ? person.photoURL : "https://i.ibb.co/hCnXYpD/blank-profile-picture-973460-1280.png"}
             />
           </div>
         </div>
