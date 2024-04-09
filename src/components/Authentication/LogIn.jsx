@@ -4,16 +4,19 @@ import { Link  } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import { useNavigate ,  useLocation } from "react-router-dom";
 const LogIn = () => {
   const [error, setError] = useState(null);
-  const { signInEmailPassword, google , github} = useContext(AuthContext);
+  const { signInEmailPassword, google , github, person} = useContext(AuthContext);
   const {
     register,
     handleSubmit,
 
     formState: { errors },
   } = useForm();
+  const navigate = useNavigate()
+  const location = useLocation();
+  console.log(location,"login")
   const onSubmit = (data) => {
     const { email, password } = data;
     setError("");
@@ -22,13 +25,22 @@ const LogIn = () => {
     signInEmailPassword(email, password)
       .then((result) => {
         console.log("log in", result);
+        navigate(location.state);
         toast(`Log In Succesfull.`);
       })
       .catch((error) => {
         setError(error.message);
       });
+
+
+    //   
+
+
+
+      
     
   };
+
   return (
     <div className="hero min-h-screen bg-base-200 pt-20 md:p-28 lg:p-28">
       <div className="hero-content flex-col lg:flex-row-reverse">
