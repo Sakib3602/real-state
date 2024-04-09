@@ -16,7 +16,7 @@ const LogIn = () => {
   } = useForm();
   const navigate = useNavigate()
   const location = useLocation();
-  console.log(location,"login")
+
   const onSubmit = (data) => {
     const { email, password } = data;
     setError("");

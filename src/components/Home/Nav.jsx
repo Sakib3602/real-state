@@ -4,6 +4,9 @@ import { AuthContext } from "../Authentication/AuthProvider";
 
 const Nav = () => {
   const {person , logout} = useContext(AuthContext)
+  if(person){
+    console.log(person.photoURL)
+  }
 
   return (
     <div className="navbar absolute z-10 leg opacity-100 mt-5  lg:h-[100px] font-[700] rounded-3xl md:w-[100%] lg:w-[90%] lg:left-20">
@@ -91,12 +94,16 @@ const Nav = () => {
           tabIndex={0}
           role="button"
           className=" avatar tooltip tooltip-bottom"
-          data-tip="hello"
+          data-tip="user"
         >
           <div className="w-10 rounded-full lg:mr-3">
             <img
               alt="Tailwind CSS Navbar component tool-tip"
-              src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+              // src="https://i.ibb.co/hCnXYpD/blank-profile-picture-973460-1280.png"
+
+
+             
+              src={`${person.photoURL || "https://i.ibb.co/hCnXYpD/blank-profile-picture-973460-1280.png" }`}
             />
           </div>
         </div>

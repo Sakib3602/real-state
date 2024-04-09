@@ -5,14 +5,14 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
 import { onAuthStateChanged } from "firebase/auth";
 import { GithubAuthProvider } from "firebase/auth";
+import { updateProfile } from "firebase/auth";
 
 export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
     const [person,setPerson] = useState(null)
-    // github sign in
     
-
+    // github sign in
     const gitProvider = new GithubAuthProvider();
 
     function github(){
@@ -38,6 +38,13 @@ function logout(){
     signOut(auth)
   
 }
+// update profile
+function update(name,photo,number){
+    return updateProfile(auth.currentUser, {
+        displayName: name, photoURL: photo, phoneNumber : number, 
+      })
+}
+
   //   on auth state change
 
   useEffect(()=>{
@@ -65,6 +72,8 @@ function logout(){
     person,
     logout,
     github,
+    update,
+    
   };
 
   return <AuthContext.Provider value={info}>{children}</AuthContext.Provider>;
