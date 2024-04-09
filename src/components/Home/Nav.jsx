@@ -3,13 +3,13 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Authentication/AuthProvider";
 
 const Nav = () => {
-  const {person , logout} = useContext(AuthContext)
-  if(person){
-    console.log(person.photoURL)
+  const { person, logout } = useContext(AuthContext);
+  if (person) {
+    console.log(person.displayName);
   }
 
   return (
-    <div className="navbar absolute z-10 leg opacity-100 mt-5  lg:h-[100px] font-[700] rounded-3xl md:w-[100%] lg:w-[90%] lg:left-20">
+    <div className="navbar absolute z-10 leg opacity-100 mt-5  lg:h-[100px] font-[700] rounded-3xl md:ml-20 lg:ml-0  lg:w-[90%] lg:left-20">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -69,41 +69,45 @@ const Nav = () => {
 
       {/*  */}
 
-      {
-        person ? <div className="ml-3">
-          <button onClick={logout} className="btn btn-outline ">Sign Out</button>
-      </div> : <div>
-      <div className="navbar-end">
-        <Link to={"/login"}>
-          <button className="btn btn-outline ">Log In</button>
-        </Link>
-      </div>
-      <div className="ml-3">
-        <Link to={"/register"}>
-          <button className="btn btn-outline ">Sign Up</button>
-        </Link>
-      </div>
-      </div>
-      
-      
-      }
-      
+      {person ? (
+        <div className="ml-3">
+          <button onClick={logout} className="btn btn-outline ">
+            Sign Out
+          </button>
+        </div>
+      ) : (
+        <div>
+          <div className="navbar-end">
+            <Link to={"/login"}>
+              <button className="btn btn-outline ">Log In</button>
+            </Link>
+          </div>
+          <div className="ml-3">
+            <Link to={"/register"}>
+              <button className="btn btn-outline ">Sign Up</button>
+            </Link>
+          </div>
+        </div>
+      )}
+
       {/*  */}
       <div className="dropdown dropdown-end ml-3">
         <div
           tabIndex={0}
           role="button"
           className=" avatar tooltip tooltip-bottom"
-          data-tip="user"
+          data-tip={person ? person?.displayName : "User"}
         >
           <div className="w-10 rounded-full lg:mr-3">
             <img
               alt="Tailwind CSS Navbar component tool-tip"
               // src="https://i.ibb.co/hCnXYpD/blank-profile-picture-973460-1280.png"
 
-
-             
-              src={person ? person.photoURL : "https://i.ibb.co/hCnXYpD/blank-profile-picture-973460-1280.png"}
+              src={
+                person
+                  ? person.photoURL
+                  : "https://i.ibb.co/hCnXYpD/blank-profile-picture-973460-1280.png"
+              }
             />
           </div>
         </div>

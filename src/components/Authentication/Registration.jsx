@@ -1,9 +1,10 @@
 import { useContext, useState } from "react";
-import { Link , useNavigation} from "react-router-dom";
+import { Link, useNavigation } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
 import { useForm } from "react-hook-form";
-
+import { useNavigate } from "react-router-dom";
 const Registration = () => {
+  const navigate = useNavigate();
   const { emailPassword } = useContext(AuthContext);
   const [error, setError] = useState();
   const {
@@ -13,34 +14,31 @@ const Registration = () => {
     formState: { errors },
   } = useForm();
 
-
-  const navig = useNavigation()
+  // const navig = useNavigation();
   const onSubmit = (data) => {
-    setError("")
-    const { email, password, Cpassword } = data;
 
+    navigate("/login")
+    setError("");
+    const { email, password, Cpassword } = data;
 
     console.log(email);
 
-    if(password !== Cpassword){
-      alert("Confirm Your Password")
+    if (password !== Cpassword) {
+      alert("Confirm Your Password");
       return;
     }
-
 
     // email password sign up
 
     emailPassword(email, password)
-    .then((result)=>{
-      console.log(result)
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
 
-    })
-    .catch((error)=>{
-      setError(error.message)
-    })
-
-    navig("/")
-    
+    navig("/");
   };
 
   return (
@@ -72,13 +70,11 @@ const Registration = () => {
                 {...register("email", { required: true })}
                 placeholder="email"
                 className="input input-bordered"
-                
               />
-               {errors.email && <span className="text-red-600">This field is required</span>}
+              {errors.email && (
+                <span className="text-red-600">This field is required</span>
+              )}
             </div>
-
-            
-            
 
             <div className="form-control">
               <label className="label">
@@ -89,7 +85,6 @@ const Registration = () => {
                 {...register("password", { required: true })}
                 placeholder="password"
                 className="input input-bordered"
-                
               />
               <label className="label">
                 <span className="label-text">Confirm Password</span>
@@ -99,9 +94,10 @@ const Registration = () => {
                 {...register("Cpassword", { required: true })}
                 placeholder="Confirm password"
                 className="input input-bordered"
-                
               />
-               {errors.Cpassword && <span className="text-red-600">This field is required</span>}
+              {errors.Cpassword && (
+                <span className="text-red-600">This field is required</span>
+              )}
               <label className="label ">
                 <a href="#" className="label-text-alt link link-hover">
                   Forgot password?
@@ -110,7 +106,7 @@ const Registration = () => {
               {error && <p className="text-red-600">{error}</p>}
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn-primary">Sign Up</button>
+              <button className="btn btn-outline">Sign Up</button>
             </div>
           </form>
         </div>

@@ -1,22 +1,25 @@
-import { useContext,  useState } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link  } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
+import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useNavigate ,  useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { FaEye } from "react-icons/fa";
 const LogIn = () => {
-    const [see,setSee] = useState(true)
+  const navigate = useNavigate()
+  const [see, setSee] = useState(true);
   const [error, setError] = useState(null);
-  const { signInEmailPassword, google , github, person} = useContext(AuthContext);
+  const { signInEmailPassword, google, github, person } =
+    useContext(AuthContext);
   const {
     register,
     handleSubmit,
 
     formState: { errors },
   } = useForm();
-  const navigate = useNavigate()
+  
   const location = useLocation();
 
   const onSubmit = (data) => {
@@ -34,17 +37,13 @@ const LogIn = () => {
         setError(error.message);
       });
 
+      navigate("/")
 
-    //   
-
-
-
-      
-    
+    //
   };
-  function SEE(){
-    setSee(!see)
-    console.log(see)
+  function SEE() {
+    setSee(!see);
+    console.log(see);
   }
 
   return (
@@ -66,7 +65,10 @@ const LogIn = () => {
             >
               Google
             </button>
-            <button onClick={github} className="btn btn-full lg:btn-wide btn-outline">
+            <button
+              onClick={github}
+              className="btn btn-full lg:btn-wide btn-outline"
+            >
               Github
             </button>
           </div>
@@ -98,12 +100,17 @@ const LogIn = () => {
             {/*  */}
 
             <div className="form-control">
-            <h1>Password</h1>
-            <label className="input input-bordered flex items-center gap-2 ">
-            <input type={see ? "password" : "text"} {...register("password", { required: true })} className="  lg:w-[590px]" placeholder="password" />
-            <FaEye onClick={SEE} className="text-[50px]"></FaEye>
-          </label>
-              
+              <h1>Password</h1>
+              <label className="input input-bordered flex items-center gap-2 ">
+                <input
+                  type={see ? "password" : "text"}
+                  {...register("password", { required: true })}
+                  className="  lg:w-[590px]"
+                  placeholder="password"
+                />
+                <FaEye onClick={SEE} className="text-[50px]"></FaEye>
+              </label>
+
               {errors.password && (
                 <span className="text-red-600">This field is required</span>
               )}
