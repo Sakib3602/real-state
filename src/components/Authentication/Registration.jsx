@@ -3,9 +3,12 @@ import { Link, useNavigation } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Registration = () => {
+  
   const navigate = useNavigate();
-  const { emailPassword } = useContext(AuthContext);
+  const { emailPassword , update,logout} = useContext(AuthContext);
   const [error, setError] = useState();
   const {
     register,
@@ -19,9 +22,11 @@ const Registration = () => {
 
     navigate("/login")
     setError("");
-    const { email, password, Cpassword } = data;
+    const { email, password, Cpassword , name, photo } = data;
 
-    console.log(email);
+   
+
+ 
 
     if (password !== Cpassword) {
       alert("Confirm Your Password");
@@ -38,7 +43,18 @@ const Registration = () => {
         setError(error.message);
       });
 
-    navig("/");
+
+      update(name,photo)
+      .then(()=>{
+        toast("Registration Done!");
+      }
+    
+    )
+      .catch()
+
+
+      navig("/");
+      logout()
   };
 
   return (
@@ -58,7 +74,7 @@ const Registration = () => {
           </Link>
         </div>
 
-        <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+        <div className="card shrink-0 w-full lg:w-[600px]  shadow-2xl bg-base-100">
           {/* form start */}
           <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
             <div className="form-control">
@@ -68,13 +84,51 @@ const Registration = () => {
               <input
                 type="email"
                 {...register("email", { required: true })}
-                placeholder="email"
+                placeholder="Your Email"
                 className="input input-bordered"
               />
               {errors.email && (
                 <span className="text-red-600">This field is required</span>
               )}
             </div>
+
+            {/* name */}
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Name</span>
+              </label>
+              <input
+                type="text"
+                {...register("name")}
+                placeholder="Your Name"
+                className="input input-bordered"
+              />
+            
+            </div>
+
+            {/* photo url */}
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Photo URL</span>
+              </label>
+              <input
+                type="text"
+                {...register("photo")}
+                placeholder="Give Here Your Photo Url"
+                className="input input-bordered"
+              />
+            
+            </div>
+
+            {/*  */}
+
+
+            <ToastContainer />
+
+
+
+
+
 
             <div className="form-control">
               <label className="label">
@@ -83,16 +137,19 @@ const Registration = () => {
               <input
                 type="password"
                 {...register("password", { required: true })}
-                placeholder="password"
+                placeholder="Password"
                 className="input input-bordered"
               />
+               {errors.password && (
+                <span className="text-red-600">This field is required</span>
+              )}
               <label className="label">
                 <span className="label-text">Confirm Password</span>
               </label>
               <input
                 type="password"
                 {...register("Cpassword", { required: true })}
-                placeholder="Confirm password"
+                placeholder="Confirm Password"
                 className="input input-bordered"
               />
               {errors.Cpassword && (

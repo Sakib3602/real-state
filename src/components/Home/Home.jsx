@@ -1,12 +1,17 @@
+
 import HomeCard from "./HomeCard";
 import Review from "./Review";
 import Slider from "./Slider";
+import Aos from "aos";
+import 'aos/dist/aos.css'
 import {
   
     useLoaderData,
   } from "react-router-dom";
 
 const Home = () => {
+    Aos.init()
+    
 
     const data = useLoaderData()
     console.log(data)
@@ -17,7 +22,7 @@ const Home = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-11 mt-11 lg:w-[95%] m-auto">
             {
-                data.map((e)=> <HomeCard key={e.id} e={e}></HomeCard>)
+                data.map((e)=> <HomeCard  key={e.id} e={e}></HomeCard>)
             }
         </div>
 

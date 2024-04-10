@@ -6,7 +6,8 @@ const HomeCard = ({ e }) => {
     location, id
   } = e;
   return (
-    <div className="card card-compact w-full md:w-[80%] m-auto lg:w-[460px] bg-base-100 shadow-xl">
+    <div data-aos="fade-up"
+    data-aos-anchor-placement="top-center" className="card card-compact w-full md:w-[80%] m-auto lg:w-[460px] bg-base-100 shadow-xl">
       <figure>
         <img
           src={image}

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
@@ -18,17 +19,31 @@ const Footer = () => {
 			<div className="space-y-3">
 				<h3 className="tracking-wide uppercase text-gray-50">Product</h3>
 				<ul className="space-y-1">
+
 					<li>
-						<a rel="noopener noreferrer" href="#">Features</a>
+
+					<Link to={"/"}>
+						<a rel="noopener noreferrer" >Home</a>
+					</Link>
+					</li>
+					
+					<li><Link to={"/login"}>
+						<a rel="noopener noreferrer" >Log IN</a>
+					</Link></li>
+					<li>
+					<Link to={"/register"}>
+						<a rel="noopener noreferrer" >RegisTration</a>
+					</Link>
 					</li>
 					<li>
-						<a rel="noopener noreferrer" href="#">Integrations</a>
+					<Link to={"/upDateProfile"}>
+						<a rel="noopener noreferrer" >Update Profile</a>
+					</Link>
 					</li>
 					<li>
-						<a rel="noopener noreferrer" href="#">Pricing</a>
-					</li>
-					<li>
-						<a rel="noopener noreferrer" href="#">FAQ</a>
+					<Link to={"/userProfile"}>
+						<a rel="noopener noreferrer" >Uer Profile</a>
+					</Link>
 					</li>
 				</ul>
 			</div>
