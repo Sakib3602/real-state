@@ -1,5 +1,5 @@
-import React from 'react';
 
+import 'animate.css';
 const About = () => {
     return (
         <div className='pt-32 w-[90%] h-[850px]  m-auto'>
@@ -10,7 +10,7 @@ const About = () => {
             </div>
 
             <div className='grid grid-cols-1 lg:grid-cols-3 mt-7 gap-6 m-auto'>
-                <div className='text-center space-y-3'>
+                <div className='text-center space-y-3 '>
                     <img className='w-[400px] h-[400px] rounded-full' src="https://i.ibb.co/KXwYmm6/pamela-buenrostro-1-Ko-i-ILtr-PI-unsplash.jpg" alt="" />
                     <h1 className='text-[30px] text-blue-600 font-[700] '>Bill Gates</h1>
                     <h1 className='text-yellow-800 font-[500]'>COO</h1>

@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Authentication/AuthProvider";
-
+import 'animate.css';
 const Nav = () => {
   const { person, logout } = useContext(AuthContext);
   if (person) {
@@ -33,21 +33,21 @@ const Nav = () => {
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <NavLink to={"/"}>Home</NavLink>
+              <NavLink to={"/"} >Home</NavLink>
             </li>
             <li>
-              <NavLink to={"/about"}>About Us</NavLink>
+              <NavLink to={"/about"}  >About Us</NavLink>
             </li>
             <li>
-              <NavLink to={"/updateProfile"}>Update Profile</NavLink>
+              <NavLink to={"/updateProfile"} >Update Profile</NavLink>
             </li>
             <li>
-              <NavLink to={"/userProfile"}>User Profile</NavLink>
+              <NavLink to={"/userProfile"} >User Profile</NavLink>
             </li>
           </ul>
         </div>
         <Link to={"/"}>
-          <a className=" lg:text-3xl">DREAM-TULIP</a>
+          <a className=" lg:text-3xl animate__animated animate__bounceInDown ">DREAM-TULIP</a>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">

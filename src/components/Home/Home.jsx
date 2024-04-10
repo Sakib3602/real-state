@@ -1,4 +1,5 @@
 import HomeCard from "./HomeCard";
+import Review from "./Review";
 import Slider from "./Slider";
 import {
   
@@ -19,6 +20,8 @@ const Home = () => {
                 data.map((e)=> <HomeCard key={e.id} e={e}></HomeCard>)
             }
         </div>
+
+        <Review></Review>
 
 
         </div>

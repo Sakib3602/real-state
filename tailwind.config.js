@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      boxShadow: {
+        'neumorphic': '-20px -20px 60px #bebebe, 20px 20px 60px #ffffff',
+      }
+    },
   },
   plugins: [require("daisyui")],
 }
