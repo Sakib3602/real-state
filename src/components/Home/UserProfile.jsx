@@ -1,10 +1,12 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../Authentication/AuthProvider";
 import { Link } from "react-router-dom";
 
 const UserProfile = () => {
   const { person } = useContext(AuthContext);
-
+  useEffect(()=>{
+    document.title = "DREAM_TULIP | Your Profile."
+  },[])
   console.log(person, "jksncisi");
   return (
     <div className="min-h-[500px] w-[100%] m-auto rounded-lg ">

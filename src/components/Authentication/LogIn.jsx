@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
@@ -19,7 +19,9 @@ const LogIn = () => {
 
     formState: { errors },
   } = useForm();
-  
+  useEffect(()=>{
+    document.title = "DREAM_TULIP | Log IN"
+  },[])
   const location = useLocation();
 
   const onSubmit = (data) => {

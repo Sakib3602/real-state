@@ -1,4 +1,5 @@
 
+import { useEffect } from "react";
 import HomeCard from "./HomeCard";
 import Review from "./Review";
 import Slider from "./Slider";
@@ -11,7 +12,9 @@ import {
 
 const Home = () => {
     Aos.init()
-    
+    useEffect(()=>{
+        document.title = "DREAM_TULIP  | Home"
+      },[])
 
     const data = useLoaderData()
     console.log(data)

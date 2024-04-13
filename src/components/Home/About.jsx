@@ -1,6 +1,10 @@
 
 import 'animate.css';
+import { useEffect } from 'react';
 const About = () => {
+    useEffect(()=>{
+        document.title = "DREAM_TULIP | About Us"
+      },[])
     return (
         <div className='pt-32 w-[90%] h-[850px]  m-auto'>
             <h1 className='text-center text-[30px] lg:text-[50px] font-[600] border-b'>About Us</h1>

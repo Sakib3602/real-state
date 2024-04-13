@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import { CiLocationOn } from "react-icons/ci";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useEffect } from "react";
 {/* Same as */}
 
 const Deatails = () => {
@@ -10,9 +11,12 @@ const Deatails = () => {
   const data = useLoaderData();
 
   const data1 = data.find((e) => e.id == parseInt(id));
-
+  useEffect(()=>{
+    document.title = "DREAM_TULIP | Details"
+  },[])
   function handle(){
-     
+
+    
 
      let book = JSON.parse(localStorage.getItem("Booked")) || []
      const book1 = book.find(e => e.id == data1.id)

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../Authentication/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
@@ -11,6 +11,9 @@ const UpdateProfile = () => {
 
     formState: { errors },
   } = useForm();
+  useEffect(()=>{
+    document.title = "DREAM_TULIP | Update Profile......"
+  },[])
 
   const onSubmit = (data) => {
     const { name, number, photo } = data;

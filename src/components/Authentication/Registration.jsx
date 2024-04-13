@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useNavigation } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
 import { useForm } from "react-hook-form";
@@ -6,9 +6,12 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const Registration = () => {
-  
+
+  useEffect(()=>{
+    document.title = "DREAM_TULIP | Register Now"
+  },[])
   const navigate = useNavigate();
-  const { emailPassword , update,logout} = useContext(AuthContext);
+  const { emailPassword, update, logout } = useContext(AuthContext);
   const [error, setError] = useState();
   const {
     register,
@@ -19,14 +22,9 @@ const Registration = () => {
 
   // const navig = useNavigation();
   const onSubmit = (data) => {
-
-    navigate("/login")
+    navigate("/login");
     setError("");
-    const { email, password, Cpassword , name, photo } = data;
-
-   
-
- 
+    const { email, password, Cpassword, name, photo } = data;
 
     if (password !== Cpassword) {
       alert("Confirm Your Password");
@@ -43,18 +41,14 @@ const Registration = () => {
         setError(error.message);
       });
 
-
-      update(name,photo)
-      .then(()=>{
+    update(name, photo)
+      .then(() => {
         toast("Registration Done!");
-      }
-    
-    )
-      .catch()
+      })
+      .catch();
 
-
-      navig("/");
-      logout()
+    logout();
+    navig("/");
   };
 
   return (
@@ -103,7 +97,6 @@ const Registration = () => {
                 placeholder="Your Name"
                 className="input input-bordered"
               />
-            
             </div>
 
             {/* photo url */}
@@ -117,18 +110,11 @@ const Registration = () => {
                 placeholder="Give Here Your Photo Url"
                 className="input input-bordered"
               />
-            
             </div>
 
             {/*  */}
 
-
             <ToastContainer />
-
-
-
-
-
 
             <div className="form-control">
               <label className="label">
@@ -140,7 +126,7 @@ const Registration = () => {
                 placeholder="Password"
                 className="input input-bordered"
               />
-               {errors.password && (
+              {errors.password && (
                 <span className="text-red-600">This field is required</span>
               )}
               <label className="label">
