@@ -17,7 +17,7 @@ const Home = () => {
       },[])
 
     const data = useLoaderData()
-    console.log(data)
+   
     return (
         <div className="" >
         <Slider></Slider>

@@ -6,10 +6,9 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const Registration = () => {
-
-  useEffect(()=>{
-    document.title = "DREAM_TULIP | Register Now"
-  },[])
+  useEffect(() => {
+    document.title = "DREAM_TULIP | Register Now";
+  }, []);
   const navigate = useNavigate();
   const { emailPassword, update, logout } = useContext(AuthContext);
   const [error, setError] = useState();
@@ -36,18 +35,20 @@ const Registration = () => {
     emailPassword(email, password)
       .then((result) => {
         console.log(result);
+        update(name, photo)
+        .then(() => {
+          toast("Registration Done!");
+        })
+        .catch();
+
+        logout();
       })
       .catch((error) => {
         setError(error.message);
       });
 
-    update(name, photo)
-      .then(() => {
-        toast("Registration Done!");
-      })
-      .catch();
+   
 
-    logout();
     navig("/");
   };
 

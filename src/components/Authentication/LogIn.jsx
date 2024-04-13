@@ -33,7 +33,7 @@ const LogIn = () => {
       .then((result) => {
         console.log("log in", result);
         navigate(location.state);
-        toast(`Log In Succesfull.`);
+        toast('Log In Succesfull.');
       })
       .catch((error) => {
         setError(error.message);
@@ -110,7 +110,7 @@ const LogIn = () => {
                   className="  lg:w-[590px]"
                   placeholder="password"
                 />
-                <FaEye onClick={SEE} className="text-[50px]"></FaEye>
+                <FaEye onClick={SEE} className="text-[26px] ml-20 lg:ml-0 lg:text-[50px]"></FaEye>
               </label>
 
               {errors.password && (
