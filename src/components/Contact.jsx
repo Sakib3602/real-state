@@ -3,8 +3,12 @@ import { TileLayer } from 'react-leaflet/TileLayer'
 import { useMap } from 'react-leaflet/hooks'
 import "leaflet/dist/leaflet.css";
 import { Marker, Popup } from "react-leaflet";
+import { useEffect } from 'react';
 
 const Contact = () => {
+    useEffect(()=>{
+        document.title = "DREAM_TULIP | Contact With Us"
+      },[])
   const position = [24.0218, 90.2972];
   return (
     <div className="grid w-[88%] grid-cols-1  lg:grid-cols-2 pl-16 pt-24 lg:pt-28 lg:pl-24">
