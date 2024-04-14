@@ -35,7 +35,7 @@ const Deatails = () => {
 
   return (
     <div className="pt-32 rounded-3xl font-sans ">
-      <div className="w-[95%] flex flex-col lg:flex-row h-[560px] rounded-3xl   m-auto ">
+      <div className="w-[95%]  h-[560px] flex flex-col lg:flex-row  rounded-3xl   m-auto ">
         <div className="w-full lg:w-[45%] lg:h-full">
           <img className="w-full h-full rounded-3xl" src={data1.image} alt="" />
         </div>

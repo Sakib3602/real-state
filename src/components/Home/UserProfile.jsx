@@ -21,10 +21,10 @@ const UserProfile = () => {
         />
 
         <div className="ml-12 space-y-9">
-          <h1 className="text-[46px] font-[700]">
+          <h1 className="text-[30px] md:text-[40px] lg:text-[46px] font-[700]">
             Name : {person.displayName || "Not Set"}
           </h1>
-          <h1 className="text-[30px] lg:text-[46px] font-[700]">Email : {person.email}</h1>
+          <h1 className="text-[26px] md:text-[40px] lg:text-[46px] font-[700]">Email : {person.email}</h1>
 
           <Link to={"/updateProfile"}>
             <button className="btn mt-9 btn-outline btn-wide">

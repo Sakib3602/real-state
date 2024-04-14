@@ -13,6 +13,7 @@ import Deatails from "./components/Deatails";
 import AuthProvider from "./components/Authentication/AuthProvider";
 import PrivateRoute from "./components/PrivateRoute";
 import ErrorPage from "./components/ErrorPage";
+import Contact from "./components/Contact";
 
 // routes.....
 const router = createBrowserRouter([
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Registration></Registration>,
+      },
+      {
+        path: "/contact",
+        element: <Contact></Contact>
       },
     ],
   },

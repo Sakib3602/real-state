@@ -39,6 +39,9 @@ const Nav = () => {
               <NavLink to={"/about"}  >About Us</NavLink>
             </li>
             <li>
+              <NavLink to={"/contact"}  >Contact</NavLink>
+            </li>
+            <li>
               <NavLink to={"/updateProfile"} >Update Profile</NavLink>
             </li>
             <li>
@@ -59,8 +62,13 @@ const Nav = () => {
             <NavLink to={"/about"}>About Us</NavLink>
           </li>
           <li>
-            <NavLink to={"/updateProfile"}>Update Profile</NavLink>
-          </li>
+              <NavLink to={"/contact"}  >Contact</NavLink>
+            </li>
+         {
+          person ?  <li>
+          <NavLink to={"/updateProfile"}>Update Profile</NavLink>
+        </li> : ""
+         }
           <li>
             <NavLink to={"/userProfile"}>User Profile</NavLink>
           </li>
