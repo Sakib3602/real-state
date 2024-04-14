@@ -3,11 +3,18 @@ import { TileLayer } from 'react-leaflet/TileLayer'
 import { useMap } from 'react-leaflet/hooks'
 import "leaflet/dist/leaflet.css";
 import { Marker, Popup } from "react-leaflet";
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import moment from 'moment';
 
 const Contact = () => {
+    const [currentTime, setCurrentTime] = useState(moment().format('h:mm:ss a'));
     useEffect(()=>{
         document.title = "DREAM_TULIP | Contact With Us"
+        setInterval(() => {
+            setCurrentTime(moment().format('h:mm:ss a')); // Update time every second
+        }, 1000);
+
+       
       },[])
   const position = [24.0218, 90.2972];
   return (
@@ -17,6 +24,7 @@ const Contact = () => {
           Contact Us
         </h1>
 
+            
         <form>
           <div className="p-5 space-y-6">
             <label className="input input-bordered flex items-center gap-2">
@@ -48,9 +56,18 @@ const Contact = () => {
               placeholder="Your Message"
               className="input input-bordered input-lg w-full "
             />
-            <button className="btn w-full btn-outline">Send</button>
+            <button className="btn w-full btn-outline">Send Mail</button>
           </div>
         </form>
+
+        <h1>Our Opening Time Is 10.00 am To 10.00 pm</h1>
+        {
+            <h1>Now Time is, {currentTime}</h1>
+        }
+
+
+        <h1>Phone : +880 1234567886</h1>
+        <h1>Phone : +880 1937503849</h1>
       </div>
 
 
