@@ -14,6 +14,7 @@ import AuthProvider from "./components/Authentication/AuthProvider";
 import PrivateRoute from "./components/PrivateRoute";
 import ErrorPage from "./components/ErrorPage";
 import Contact from "./components/Contact";
+import Offer from "./components/Offer";
 
 // routes.....
 const router = createBrowserRouter([
@@ -35,6 +36,12 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About></About>,
+      },
+      {
+        path: "/offer",
+        element: <PrivateRoute>
+          <Offer></Offer>
+        </PrivateRoute>,
       },
       {
         path: "/updateProfile",

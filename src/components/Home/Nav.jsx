@@ -72,6 +72,9 @@ const Nav = () => {
           <li>
             <NavLink to={"/userProfile"}>User Profile</NavLink>
           </li>
+          <li>
+            <NavLink to={"/offer"}>Offers</NavLink>
+          </li>
         </ul>
       </div>
 
@@ -87,7 +90,7 @@ const Nav = () => {
         <div>
           <div className="navbar-end">
             <Link to={"/login"}>
-              <button className="btn btn-outline ">Log In</button>
+              <button className="btn  btn-outline ">Log In</button>
             </Link>
           </div>
           <div className="ml-3">

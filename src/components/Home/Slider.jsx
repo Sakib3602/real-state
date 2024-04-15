@@ -21,7 +21,7 @@ const Slider = () => {
         }}
         // navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper h-[500px] lg:h-[695px] bg-slate-100"
+        className="mySwiper h-[500px] md:h-[695px] lg:h-[695px] bg-slate-100"
       >
       
        
