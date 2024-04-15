@@ -21,7 +21,7 @@ const Slider = () => {
         }}
         // navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper h-[500px] md:h-[695px] lg:h-[695px] bg-slate-100"
+        className="mySwiper  h-[500px] md:h-[695px] lg:h-[695px] bg-slate-100"
       >
       
        
@@ -38,7 +38,7 @@ const Slider = () => {
             <div className="hero-overlay bg-opacity-30"></div>
             <div className="hero-content text-center text-neutral-content">
               <div className="max-w-md">
-                <h1 className="mb-5 text-5xl font-bold "> Skyline Penthouse In  NewYork</h1>
+                <h1 className="mb-5 mt-20 lg:mt-0 text-5xl font-bold "> Skyline Penthouse In  NewYork</h1>
                 <p className="mb-5 ">
                 Discover luxury living in the heart of New York. Elevate your
               lifestyle in a dream apartment that promises unmatched elegance
@@ -60,7 +60,7 @@ const Slider = () => {
             <div className="hero-overlay bg-opacity-30"></div>
             <div className="hero-content text-center text-neutral-content">
               <div className="max-w-md">
-                <h1 className="mb-5 text-5xl font-bold "> Lavish Poolside Oasis</h1>
+                <h1 className="mb-5 text-5xl mt-20 lg:mt-0 font-bold "> Lavish Poolside Oasis</h1>
                 <p className="mb-5 ">
                 Immerse yourself in the epitome of luxury at our Lavish Poolside
               Oasis. This exclusive retreat offers a tranquil escape, with
@@ -84,7 +84,7 @@ const Slider = () => {
             <div className="hero-overlay bg-opacity-30"></div>
             <div className="hero-content text-center text-neutral-content">
               <div className="max-w-md">
-                <h1 className="mb-5 text-5xl font-bold ">Royel Place</h1>
+                <h1 className="mb-5 text-5xl mt-20 lg:mt-0 font-bold ">Royel Place</h1>
                 <p className="mb-5 ">
                 Step into a realm where luxury meets legacy at our Royal Places
               House. Designed for those who covet grandeur and exclusivity, each

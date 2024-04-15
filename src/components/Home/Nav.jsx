@@ -9,7 +9,7 @@ const Nav = () => {
   }
 
   return (
-    <div className="navbar absolute z-10 leg opacity-100 mt-5  lg:h-[100px] font-[700] rounded-3xl md:ml-20 lg:ml-0  lg:w-[90%] lg:left-20">
+    <div className="navbar absolute z-10 leg opacity-100 mt-5  lg:h-[100px] font-[700] rounded-3xl md:ml-20 lg:ml-0 md:w-[100%] lg:w-[90%] lg:left-20">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

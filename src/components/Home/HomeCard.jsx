@@ -34,8 +34,8 @@ const HomeCard = ({ e }) => {
             }
 
         </ul>
-        <div className="card-actions justify-end">
-          <Link to={`/details/${id}`}><button className="btn  btn-outline btn-full">See Details</button></Link>
+        <div className="card-actions justify-end ">
+          <Link to={`/details/${id}`}><button className="btn  btn-outline  btn-full">See Details</button></Link>
         </div>
       </div>
     </div>

@@ -32,14 +32,14 @@ const LogIn = () => {
     signInEmailPassword(email, password)
       .then((result) => {
         console.log("log in", result);
-        navigate(location.state);
         toast('Log In Succesfull.');
+        navigate(location.state || '/');
       })
       .catch((error) => {
         setError(error.message);
       });
 
-      navigate("/")
+      // navigate("/")
 
     //
   };

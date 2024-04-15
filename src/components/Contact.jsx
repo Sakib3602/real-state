@@ -20,7 +20,7 @@ const Contact = () => {
       },[])
   const position = [24.0218, 90.2972];
   return (
-    <div className="grid w-[88%] grid-cols-1  lg:grid-cols-2 pl-16 pt-24 lg:pt-28 lg:pl-24">
+    <div className="grid w-[95%] lg:w-[88%] grid-cols-1  lg:grid-cols-2 pl-5 pt-24 lg:pt-28 lg:pl-24">
       <div className="w-full lg:h-[500px] ">
         <h1 className="text-center text-[36px] lg:text-[46px] font-[600]">
           Contact Us
