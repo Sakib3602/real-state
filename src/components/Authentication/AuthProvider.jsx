@@ -15,34 +15,42 @@ export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
   const [person, setPerson] = useState(null);
-
+  const [loading, setLoading] = useState(true)
   // github sign in
   const gitProvider = new GithubAuthProvider();
 
   function github() {
+    setLoading(true)
     return signInWithPopup(auth, gitProvider);
   }
+
+  
   // google sign in
   const googleProvider = new GoogleAuthProvider();
   function google() {
+    setLoading(true)
     return signInWithPopup(auth, googleProvider);
   }
 
   // email password sign up
   function emailPassword(email, password) {
+    setLoading(true)
     return createUserWithEmailAndPassword(auth, email, password);
   }
   // email password sing in
   function signInEmailPassword(email, password) {
+    setLoading(true)
     return signInWithEmailAndPassword(auth, email, password);
   }
   //   log out
   function logout() {
+    setLoading(true)
     setPerson("");
     signOut(auth);
   }
   // update profile
   function update(name, photo) {
+    // setLoading(true)
     return updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: photo,
@@ -53,12 +61,12 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const DeleteIt = onAuthStateChanged(auth, (user) => {
+      
       if (user) {
         setPerson(user);
         console.log("on auth", user);
-      } else {
-        console.log("No One Here");
-      }
+      } 
+      setLoading(false)
     });
 
     return () => {
@@ -75,6 +83,7 @@ const AuthProvider = ({ children }) => {
     github,
     update,
     setPerson,
+    loading
   };
 
   return <AuthContext.Provider value={info}>{children}</AuthContext.Provider>;

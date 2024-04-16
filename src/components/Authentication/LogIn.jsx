@@ -41,7 +41,7 @@ const LogIn = () => {
         setError(error.message);
       });
 
-      // navigate("/")
+      
 
     //
   };
@@ -49,6 +49,8 @@ const LogIn = () => {
     setSee(!see);
     console.log(see);
   }
+
+ 
 
   return (
     <div className="hero min-h-screen bg-base-200 pt-20 md:p-28 lg:p-28">
