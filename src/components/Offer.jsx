@@ -1,4 +1,9 @@
+import { useEffect } from "react";
+
 const Offer = () => {
+  useEffect(()=>{
+    document.title = "DREAM-TULIP | Offers"
+  },[])
   return (
     <div className="pt-24 pl-5 lg:pt-28 lg:pl-20 ">
       <div className="card w-[94%] glass">
