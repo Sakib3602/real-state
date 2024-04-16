@@ -5,6 +5,7 @@ import Slider from "./Slider";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useLoaderData } from "react-router-dom";
+import Look from "./Look";
 
 const Home = () => {
   Aos.init();
@@ -36,6 +37,8 @@ const Home = () => {
           <HomeCard key={e.id} e={e}></HomeCard>
         ))}
       </div>
+
+      <Look></Look>
 
       <Review></Review>
 

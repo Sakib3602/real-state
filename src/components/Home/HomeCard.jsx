@@ -35,7 +35,13 @@ const HomeCard = ({ e }) => {
 
         </ul>
         <div className="card-actions justify-end ">
-          <Link to={`/details/${id}`}><button className="btn  btn-outline  btn-full">View Property</button></Link>
+          <Link to={`/details/${id}`}><button className="cursor-pointer font-semibold overflow-hidden relative z-100 border border-black group px-8 py-2 ">
+  <span className="relative z-10 text-black group-hover:text-white text-xl duration-500">View Details</span>
+  <span className="absolute w-full h-full bg-black -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
+  <span className="absolute w-full h-full bg-black -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
+</button>
+
+</Link>
         </div>
       </div>
     </div>
