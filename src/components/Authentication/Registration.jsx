@@ -39,7 +39,7 @@ const Registration = () => {
     }
 
     if (password !== Cpassword) {
-      toast("Confirm Your Password");
+      toast("Please Type Same Password !");
       return;
     }
 
@@ -142,22 +142,7 @@ const Registration = () => {
               {errors.password && (
                 <span className="text-red-600">This field is required</span>
               )}
-              
-
-              {/* try end */}
-              {/* <label className="label">
-                <span className="label-text">Password</span>
-              </label>
-              <input
-                type="password"
-                {...register("password", { required: true })}
-                placeholder="Password"
-                className="input input-bordered"
-              />
-
-              {errors.password && (
-                <span className="text-red-600">This field is required</span>
-              )} */}
+            
               <label className="label">
                 <span className="label-text">Confirm Password</span>
               </label>
