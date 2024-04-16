@@ -3,8 +3,8 @@ import { Link, useNavigation } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
+import { FaEye } from "react-icons/fa";
 const Registration = () => {
   useEffect(() => {
     document.title = "DREAM_TULIP | Register Now";
@@ -12,6 +12,12 @@ const Registration = () => {
   const navigate = useNavigate();
   const { emailPassword, update, logout } = useContext(AuthContext);
   const [error, setError] = useState();
+  const [see, setSee] = useState(true);
+  // eye function
+  function SEE() {
+    setSee(!see);
+    console.log(see);
+  }
   const {
     register,
     handleSubmit,
@@ -21,12 +27,19 @@ const Registration = () => {
 
   // const navig = useNavigation();
   const onSubmit = (data) => {
-    navigate("/login");
     setError("");
     const { email, password, Cpassword, name, photo } = data;
+    const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z]).+$/;
+
+    if (!passwordPattern.test(password)) {
+      toast.error("Use 1 uppercase and 1 lowercase!");
+      // toast.success("ok,toast")
+      console.log("dfdcf");
+      return;
+    }
 
     if (password !== Cpassword) {
-      alert("Confirm Your Password");
+      toast("Confirm Your Password");
       return;
     }
 
@@ -36,10 +49,10 @@ const Registration = () => {
       .then((result) => {
         console.log(result);
         update(name, photo)
-        .then(() => {
-          toast("Registration Done!");
-        })
-        .catch();
+          .then(() => {
+            toast("Registration Done!");
+          })
+          .catch();
 
         logout();
       })
@@ -47,9 +60,7 @@ const Registration = () => {
         setError(error.message);
       });
 
-   
-
-    navig("/");
+    navigate("/login");
   };
 
   return (
@@ -115,10 +126,26 @@ const Registration = () => {
 
             {/*  */}
 
-            <ToastContainer />
-
             <div className="form-control">
+              {/* try */}
               <label className="label">
+                <span className="label-text">Password</span>
+              </label>
+              <label className="input input-bordered flex items-center gap-2">
+              
+                <input type={see ? "password" : "text"}
+                  {...register("password", { required: true })}
+                  className="  lg:w-[590px]"
+                  placeholder="password"/>
+               <FaEye onClick={SEE} className="text-[26px] ml-20 lg:ml-0 lg:text-[50px]"></FaEye>
+              </label>
+              {errors.password && (
+                <span className="text-red-600">This field is required</span>
+              )}
+              
+
+              {/* try end */}
+              {/* <label className="label">
                 <span className="label-text">Password</span>
               </label>
               <input
@@ -127,9 +154,10 @@ const Registration = () => {
                 placeholder="Password"
                 className="input input-bordered"
               />
+
               {errors.password && (
                 <span className="text-red-600">This field is required</span>
-              )}
+              )} */}
               <label className="label">
                 <span className="label-text">Confirm Password</span>
               </label>

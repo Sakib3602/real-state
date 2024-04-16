@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
 import { useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import {  toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useLocation } from "react-router-dom";
 import { FaEye } from "react-icons/fa";
@@ -21,6 +21,7 @@ const LogIn = () => {
   } = useForm();
   useEffect(()=>{
     document.title = "DREAM_TULIP | Log IN"
+    
   },[])
   const location = useLocation();
 
@@ -31,8 +32,9 @@ const LogIn = () => {
     // email password sign in
     signInEmailPassword(email, password)
       .then((result) => {
-        console.log("log in", result);
-        toast('Log In Succesfull.');
+        toast.success('Log In Succesfull.');
+        
+        console.log("log in", );
         navigate(location.state || '/');
       })
       .catch((error) => {
@@ -129,7 +131,8 @@ const LogIn = () => {
           </form>
         </div>
       </div>
-      <ToastContainer />
+      
+      
     </div>
   );
 };
