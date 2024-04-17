@@ -10,7 +10,7 @@ import { GoogleAuthProvider } from "firebase/auth";
 import { onAuthStateChanged } from "firebase/auth";
 import { GithubAuthProvider } from "firebase/auth";
 import { updateProfile } from "firebase/auth";
-
+// import { useNavigate } from "react-router-dom";
 export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
@@ -19,6 +19,7 @@ const AuthProvider = ({ children }) => {
   // github sign in
   const gitProvider = new GithubAuthProvider();
 
+  // 
   function github() {
     setLoading(true)
     return signInWithPopup(auth, gitProvider);
@@ -29,6 +30,8 @@ const AuthProvider = ({ children }) => {
   const googleProvider = new GoogleAuthProvider();
   function google() {
     setLoading(true)
+    
+
     return signInWithPopup(auth, googleProvider);
   }
 

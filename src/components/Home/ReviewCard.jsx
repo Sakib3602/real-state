@@ -1,7 +1,7 @@
 
 
 const ReviewCard = ({e}) => {
-    console.log(e)
+    
     const {review , customerName , role} = e
     
     

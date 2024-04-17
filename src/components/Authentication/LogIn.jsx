@@ -2,15 +2,19 @@ import { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
-import { useNavigate } from "react-router-dom";
+// import {  } from "react-router-dom";
 import {  toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useLocation } from "react-router-dom";
+import { useLocation , useNavigate } from "react-router-dom";
 import { FaEye } from "react-icons/fa";
+
+
 const LogIn = () => {
   const navigate = useNavigate()
   const [see, setSee] = useState(true);
   const [error, setError] = useState(null);
+  
+
   const { signInEmailPassword, google, github, person } =
     useContext(AuthContext);
   const {
@@ -24,6 +28,8 @@ const LogIn = () => {
     
   },[])
   const location = useLocation();
+
+  console.log(location)
 
   const onSubmit = (data) => {
     const { email, password } = data;
@@ -50,7 +56,26 @@ const LogIn = () => {
     console.log(see);
   }
 
+
+
+  function submitGoogle(){
+    google()
+    .then(()=>{
+      toast.success('Log In Succesfull with Google.');
+      navigate(location.state || '/');
+      
+    })
+  }
+
+  function submitGithub(){
+    github()
+    .then(()=>{
+      toast.success('Log In Succesfull with Github.');
+      navigate(location.state || '/');
+    })
+  }
  
+
 
   return (
     <div className="hero min-h-screen bg-base-200 pt-20 md:p-28 lg:p-28">
@@ -66,13 +91,13 @@ const LogIn = () => {
 
           <div className="flex flex-col lg:flex-row item-center space-y-4 lg:space-y-0 lg:p-0 lg:space-x-4">
             <button
-              onClick={google}
+              onClick={submitGoogle}
               className="btn btn-full lg:btn-wide btn-outline"
             >
               Google
             </button>
             <button
-              onClick={github}
+              onClick={submitGithub}
               className="btn btn-full lg:btn-wide btn-outline"
             >
               Github
