@@ -62,3 +62,27 @@ Email,Password And Google & Github login will be available here.
 - React Icons.
 - Moment Js.
 
+
+
+
+
+
+
+
+
+## Installation
+
+Install my-project with npm
+
+```bash
+  git clone https://github.com/Sakib3602/real-state.git
+  cd real-state
+
+```
+Now Install -
+```bash
+  npm install
+
+
+```
+
